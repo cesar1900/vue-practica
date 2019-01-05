@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>CRUD Vue.js</title>
+  </head>
+  <body>
+      <div class="container mt-5" id="app">
+          <h3 href="nuevo_paciente.html" >CRUD USUARIOS</h3>
+          <button onclick="location.href='nuevo_paciente.html'" class="btn btn-primary">Nuevo Paciente</button>
+          <button onclick="location.href='index_1.html'"  class="btn btn-primary">Nuevo Profesional</button>
+          <div class="mt-3">
+             
+              <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>NHC</th>
+      <th>nombre</th>
+      <th>acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <tr v-for="(paciente,index) in pacientes">
+          <td v-text=index></td>
+          <td v-text="paciente.NHC"></td>
+          <td v-text="paciente.nombre"></td>     
+          <td>
+              <button class="btn btn-success">ver</button>
+              <button class="btn btn-warning">editar</button>
+              <button class="btn btn-danger" v-on:click="eliminar_paciente(index)">eliminar</button>
+          </td>  
+      </tr>
+   
+  
+         
+ 
+ 
+    
+     
+  </tbody>
+</table>
+              
+          </div>
+      </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+  <script src="js/main.js"></script>
+  </body>
+</html>
